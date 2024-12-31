@@ -11,35 +11,41 @@
             background-color: #ffffff;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Tam ortaya alır */
-            align-items: left;
+            justify-content: center; /* Centers the content vertically */
+            align-items: left; /* Align items to the left */
             height: 100vh;
             margin: 0;
-            font-family: 'Montserrat', Arial, sans-serif; /* Yeni font */
+            font-family: 'Montserrat', Arial, sans-serif; /* New font */
             color: white;
         }
         .exclamation {
             position: absolute;
-            top: 100px; /* Sayfanın üstünden uzaklık */
-            left: 200px; /* Sayfanın solundan uzaklık */
+            top: 100px; /* Distance from the top of the page */
+            left: 200px; /* Distance from the left side of the page */
             margin: 0;
         }
         .exclamation img {
-            width: 300px; /* Görsel boyutunu küçült */
+            width: 300px; /* Image size */
             height: auto;
         }
         .error-message {
-            font-size: 48px; /* Yazıyı büyütür */
+            font-size: 48px; /* Larger font size */
             margin: 20px 0;
             padding-left: 250px;
             color: #000000;
         }
         .sub-message {
-            font-size: 24px; /* Alt başlık yazı boyutu */
+            font-size: 24px; /* Sub-message font size */
             padding-bottom: 100px;
             padding-left: 250px;
             margin: 10px 0;
-            color: #555555; /* Daha açık bir renk */
+            color: #555555; /* Lighter color */
+        }
+        .reason {
+            font-size: 24px; /* Reason font size */
+            padding-left: 250px;
+            margin: 10px 0;
+            color: #555555; /* Lighter color */
         }
     </style>
 </head>
@@ -49,11 +55,13 @@
     </div>
     <div class="error-message">Web Sayfası Engellenmiştir!</div>
     <div class="sub-message">Erişmeye çalıştığınız sayfa MEB erişim politikası gereğince engellenmiştir.</div>
+    <div class="reason">Sebep: Şiddet içerikli müzik</div>
 
     <script>
-        function closeTab() {
-            window.close();
-        }
+        // Redirect to Google after 5 seconds (5000 milliseconds)
+        setTimeout(function() {
+            window.location.href = "https://www.google.com";
+        }, 5000);
     </script>
 </body>
 </html>
