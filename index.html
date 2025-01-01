@@ -58,6 +58,49 @@
             width: 70%; /* Ensures it stretches across the entire width */
             text-align: center; /* Centers the text horizontally */
         }
+
+        @media (max-width: 768px) {
+            .exclamation {
+                left: 50px; /* Adjust for smaller screens */
+            }
+
+            .exclamation img {
+                width: 200px; /* Smaller image for smaller screens */
+            }
+
+            .error-message,
+            .sub-message,
+            .reason {
+                padding-left: 20px;
+                font-size: 20px; /* Smaller text size */
+            }
+
+            .aboutme {
+                font-size: 10px;
+                padding-left: 20px;
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .exclamation {
+                top: 50px; /* Adjust for very small screens */
+                left: 20px;
+            }
+
+            .error-message {
+                font-size: 18px;
+            }
+
+            .sub-message,
+            .reason {
+                font-size: 16px;
+            }
+
+            .aboutme {
+                font-size: 8px;
+            }
+        }
     </style>
 </head>
 <body>
