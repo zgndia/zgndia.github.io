@@ -1,7 +1,4 @@
 # About
-> This is a personal website that showcases my repositories
+> This is a website to showcase my past works / abilities aka a portfolio
 
 > You can access the website by clicking [here](https://zgndia.github.io)
-
-# To-Do's
-> Update repos regularly or get the repo names via js from github somehow
