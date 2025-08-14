@@ -1,199 +1,211 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Projects Showcase</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation: fadeIn 1s ease-in-out;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 20px;
-            background-color: #1e1e1e;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .profile {
-            display: flex;
-            align-items: center;
-        }
-
-        .profile img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-
-        .profile img:hover {
-            transform: scale(1.2) rotate(15deg);
-        }
-
-        .username {
-            font-size: 1.5rem;
-            font-family: "Courier New", monospace;
-            padding-left: 10px;
-        }
-
-        .username a {
-            text-decoration: none;
-            color: #61dafb;
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .username a:hover {
-            color: #ff9900;
-            transform: scale(1.1);
-        }
-
-        .repositories {
-            width: 90%;
-            max-width: 1200px;
-            margin-top: 20px;
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .repository {
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #2a2a2a;
-            border-radius: 5px;
-            animation: fadeInSlide 0.5s ease-in-out;
-        }
-
-        .repository:hover {
-            background-color: #3a3a3a;
-        }
-
-        .repository a {
-            text-decoration: none;
-            color: #61dafb;
-            font-family: "Lucida Console", Monaco, monospace;
-            font-size: 1.1rem;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        .repository a:hover {
-            color: #ff5733;
-            transform: scale(1.1);
-        }
-
-        .scroll {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .about {
-            width: 90%;
-            max-width: 1200px;
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            margin-top: 20px;
-        }
-
-        footer {
-            width: 100%;
-            text-align: center;
-            padding: 20px;
-            background-color: #1e1e1e;
-            color: #aaaaaa;
-            font-size: 0.9rem;
-            margin-top: 20px;
-            position: fixed; /* Stick footer to the bottom */
-            bottom: 0;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .username {
-                padding-left: 0;
-                text-align: center;
-            }
-
-            .repositories,
-            .about {
-                width: 95%;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInSlide {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zgn — CV & Portfolio</title>
+  <meta name="description" content="Portfolio / CV of Zgn — Aspiring Software Engineer • Game Developer" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="profile">
-            <img src="profile_picture.png" alt="Profile Picture">
-            <span class="username">
-                <a href="https://github.com/zgndia" target="_blank">github.com/zgndia</a>
-            </span>
-        </div>
-    </header>
 
-    <section class="about">
+  <div class="container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="avatar" aria-hidden>
+        <img src="avatar.png" alt="Zgn" class="avatar-img">
+      </div>
+
+      <h1 id="name">Zgn</h1>
+      <div class="role" id="role">Aspiring Software Engineer • Game Developer</div>
+      <div class="contact-intro">I build games and tools. Currently learning new tricks and shipping small projects. Open to collabs and internships.</div>
+
+      <div class="small muted">Contact</div>
+
+      <!-- Sidebar socials (buttons) -->
+      <div class="contact" aria-label="sidebar contacts">
+        <div class="contact-row">
+          <div class="contact-label">Email</div>
+          <div>
+            <!-- copies and opens mail client -->
+            <button class="btn" id="sidebarEmailBtn" data-copy="zgnbusinesses@gmail.com">zgnbusinesses@gmail.com</button>
+          </div>
+        </div>
+
+        <div class="contact-row" style="margin-top:12px">
+          <div class="contact-label">Discord</div>
+          <div>
+            <button class="btn" id="sidebarDiscordBtn" data-copy="zgn">@zgn.</button>
+          </div>
+        </div>
+
+        <div class="contact-row" style="margin-top:12px">
+          <div class="contact-label">GitHub</div>
+          <div>
+            <button class="btn" id="sidebarGithubBtn" data-url="https://github.com/zgndia">github.com/zgndia</button>
+          </div>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="small muted">Quick links</div>
+
+      <!-- sidebar quick-links (hidden on small screens) -->
+      <div class="quick-links" aria-hidden="false">
+        <button class="tab quick-btn" data-target="home">About</button>
+        <button class="tab quick-btn" data-target="works">Works</button>
+        <button class="tab quick-btn" data-target="abilities">Abilities</button>
+        <button class="tab quick-btn" data-target="contact">Contact</button>
+      </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content" id="mainContent">
+
+      <!-- MOBILE TOP TABS (visible only on small screens) -->
+      <div class="tabs" id="mobileTabs" aria-hidden="true">
+        <div class="tab active" data-target="home">About</div>
+        <div class="tab" data-target="works">Works</div>
+        <div class="tab" data-target="abilities">Abilities</div>
+        <div class="tab" data-target="contact">Contact</div>
+      </div>
+
+      <!-- ABOUT / HOME -->
+      <section class="card" id="home">
         <h2>About Me</h2>
-        <p>
-            Welcome to my GitHub Projects Showcase! I'm a passionate developer constantly exploring new technologies and creating innovative solutions. Below, you'll find some of my featured projects. Feel free to explore and contribute!
-        </p>
-    </section>
+        <p>Hello — I'm <strong id="heroName">Zgn</strong>. I enjoy building games, learning AI, and writing tools to make life easier. I have experience with Python, Html, and Lua and I ship small multiplayer experiences on Roblox and hobby projects.</p>
 
-    <section class="repositories">
-        <h2>Repositories</h2>
-        <div class="scroll">
-            <div class="repository">
-                <a href="https://github.com/zgndia/Essentials-Remake" target="_blank">Essentials-Remake</a>
-            </div>
-            <div class="repository">
-                <a href="https://github.com/zgndia/zgndia.github.io" target="_blank">zgndia.github.io</a>
-            </div>
-            <div class="repository">
-                <a href="https://github.com/zgndia/Project-C" target="_blank">Project-C</a>
-            </div>
+        <div class="home-actions">
+          <a class="btn" href="#works">See my works</a>
+          <a class="btn" href="#abilities">See my abilities</a>
+          <a class="btn" href="#contact">Get in touch</a>
         </div>
-    </section>
+      </section>
 
-    <footer>
-        &copy; 2025 zgndia | All rights reserved
-    </footer>
+      <!-- WORKS -->
+      <section class="card" id="works" style="display:none">
+        <h2>Past Works</h2>
+        <p class="muted" style="margin-bottom:12px">A few highlights from my recent projects.</p>
+        <div class="works-grid">
+          <article class="project">
+            <div class="thumb" aria-hidden>
+              <img src="imgs/project_1.jpg" alt="Project Thumbnail" width="64" height="64" />
+            </div>
+            <div>
+              <h3>Server-Sided Bomb</h3>
+              <p>Droppable bomb with server sided blast radius. Tech: Lua, Roblox Studio. <a href="https://medal.tv/games/roblox-studio/clips/kTDYsKD8u2ggRIQFd?invite=cr-MSxyTnIsNDIxMDIxMzYy&v=25" target="_blank" rel="noopener">View</a></p>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="thumb" aria-hidden>
+              <img src="imgs/project_2.jpg" alt="Project Thumbnail" width="64" height="64" />
+            </div>
+            <div>
+              <h3>Server-Sided Bomb</h3>
+              <p>UI and leaderstats practice. Tech: Lua, Roblox Studio. <a href="https://medal.tv/games/roblox-studio/clips/kTEz4rdhuzUmnKxL5?invite=cr-MSxiOUksNDIxMDIxMzYy&v=41" target="_blank" rel="noopener">View</a></p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ABILITIES -->
+      <section class="card" id="abilities" style="display:none">
+        <h2>Abilities</h2>
+        <p class="muted">Languages, frameworks, and tools — expand each item to see focused sub-skills.</p>
+
+        <div class="abilities" style="margin-top:12px">
+          <!-- Roblox Luau -->
+          <article class="ability" data-ability="luau">
+            <header class="ability-header">
+              <div class="left"><span class="dot"></span><span class="ability-title">Roblox Luau</span></div>
+              <button class="ability-toggle btn" aria-expanded="false" aria-controls="ability-luau-desc">Details</button>
+            </header>
+
+            <div class="ability-desc" id="ability-luau-desc" aria-hidden="true">
+              <p class="muted small" style="margin:0 0 8px 0">Focus areas</p>
+              <ul>
+                <li>Object-oriented programming</li>
+                <li>Roblox API usage</li>
+                <li>Networking, RemoteEvents & RemoteFunctions, secure server-authoritative logic</li>
+                <li>Performance & memory optimizations</li>
+                <li>ScreenGui, Layouts, Tweening and responsive UI</li>
+                <li>Multiplayer architecture, persistence, anti-exploit</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Python -->
+          <article class="ability" data-ability="python">
+            <header class="ability-header">
+              <div class="left"><span class="dot"></span><span class="ability-title">Python</span></div>
+              <button class="ability-toggle btn" aria-expanded="false" aria-controls="ability-python-desc">Details</button>
+            </header>
+
+            <div class="ability-desc" id="ability-python-desc" aria-hidden="true">
+              <p class="muted small" style="margin:0 0 8px 0">Focus areas</p>
+              <ul>
+                <li>Scripting & automation</li>
+                <li>Pandas basics, CSV / JSON processing</li>
+                <li>OOP, modules, packaging and virtual envs</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Tools -->
+          <article class="ability" data-ability="tools">
+            <header class="ability-header">
+              <div class="left"><span class="dot"></span><span class="ability-title">Tools & Workflow</span></div>
+              <button class="ability-toggle btn" aria-expanded="false" aria-controls="ability-tools-desc">Details</button>
+            </header>
+
+            <div class="ability-desc" id="ability-tools-desc" aria-hidden="true">
+              <p class="muted small" style="margin:0 0 8px 0">Focus areas</p>
+              <ul>
+                <li>Git: branching, commits, PRs</li>
+                <li>VS Code: debugging, extensions</li>
+                <li>Rojo: project layout & sync with Roblox Studio</li>
+                <li>Basic CI ideas & code reviews</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="card" id="contact" style="display:none">
+        <h2>Contact</h2>
+        <p class="muted">Feel free to reach out through any social you like!</p>
+
+        <div class="contact-grid">
+          <div class="card contact-card">
+            <div class="small muted">Email</div>
+            <div class="contact-inline" style="margin-top:6px">
+              <span class="contact-text">zgnbusinesses@gmail.com</span>
+              <button class="btn copy-contact" data-copy="zgnbusinesses@gmail.com" aria-label="Copy email">Copy</button>
+            </div>
+
+            <div style="margin-top:14px" class="small muted">Discord</div>
+            <div class="contact-inline" style="margin-top:6px">
+              <span class="contact-text">@zgn.</span>
+              <button class="btn copy-contact" data-copy="zgn" aria-label="Copy discord">Copy</button>
+            </div>
+
+            <div style="margin-top:14px" class="small muted">GitHub</div>
+            <div style="margin-top:6px"><a class="btn-link" href="https://github.com/zgndia" id="githubContactLink" target="_blank" rel="noopener">github.com/zgndia</a></div>
+          </div>
+        </div>
+
+      </section>
+
+      <footer>&copy; <span id="year"></span> Zgn — Built with ❤️</footer>
+
+    </main>
+  </div>
+
+  <!-- external JS (all behavior moved here) -->
+  <script src="main.js" defer></script>
 </body>
 </html>
